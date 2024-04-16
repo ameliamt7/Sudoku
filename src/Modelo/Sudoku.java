@@ -61,3 +61,11 @@ public class Sudoku {
         }
         return true;
     }
+
+    public void limpiarSudoku() {
+        for (int i = 0; i < sudoku.length; i++) {
+            for (int j = 0; j < sudoku[0].length; j++) {
+                sudoku[i][j] = 0;
+            }
+        }
+    }
