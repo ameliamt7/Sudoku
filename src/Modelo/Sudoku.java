@@ -79,3 +79,12 @@ public class Sudoku {
             return 9;
         }
     }
+
+    public boolean validarFila(int i, int valor) {
+        for (int j = 0; j < sudoku[i].length; j++) {
+            if (sudoku[i][j] == valor) {
+                return false;
+            }
+        }
+        return true;
+    }
