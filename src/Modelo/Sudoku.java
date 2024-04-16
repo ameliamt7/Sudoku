@@ -11,3 +11,23 @@ public class Sudoku {
         sudoku = new int[9][9];
         limpiarSudoku();
     }
+
+    public boolean resolverSudoku() {
+        for (int i = 0; i < sudoku.length; i++) {
+            for (int j = 0; j < sudoku[0].length; j++) {
+                if (sudoku[i][j] == 0) {
+                    for (int valor = 1; valor <= 9; valor++) {
+                        if (validarFila(i, valor) && validarColumna(j, valor) && validarCuadrante(i, j, valor)) {
+                            sudoku[i][j] = valor;
+                            if (resolverSudoku()) {
+                                return true;
+                            }
+                            sudoku[i][j] = 0;
+                        }
+                    }
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
