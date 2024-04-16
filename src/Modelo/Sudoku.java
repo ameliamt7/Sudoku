@@ -47,3 +47,17 @@ public class Sudoku {
         }
         return true;
     }
+
+    public boolean validarCuadrante(int i, int j, int valor) {
+        int posI = subCuadranteActual(i);
+        int posJ = subCuadranteActual(j);
+
+        for (int k = posI - 3; k < posI; k++) {
+            for (int l = posJ - 3; l < posJ; l++) {
+                if (sudoku[k][l] == valor) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
