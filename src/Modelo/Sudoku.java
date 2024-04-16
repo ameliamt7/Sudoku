@@ -88,3 +88,12 @@ public class Sudoku {
         }
         return true;
     }
+
+    public boolean validarColumna(int j, int valor) {
+        for (int i = 0; i < sudoku.length; i++) {
+            if (sudoku[i][j] == valor) {
+                return false;
+            }
+        }
+        return true;
+    }
