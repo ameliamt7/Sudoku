@@ -69,3 +69,13 @@ public class Sudoku {
             }
         }
     }
+
+    public int subCuadranteActual(int pos) {
+        if (pos <= 2) {
+            return 3;
+        } else if (pos <= 5) {
+            return 6;
+        } else {
+            return 9;
+        }
+    }
