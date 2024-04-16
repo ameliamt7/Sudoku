@@ -31,3 +31,19 @@ public class Sudoku {
         }
         return true;
     }
+
+    public boolean comprobarSudoku() {
+        for (int i = 0; i < sudoku.length; i++) {
+            for (int j = 0; j < sudoku[0].length; j++) {
+                int aux = sudoku[i][j];
+                sudoku[i][j] = 0;
+                if (!validarFila(i, aux) || !validarColumna(j, aux) || !validarCuadrante(i, j, aux)) {
+                    sudoku[i][j]=aux;
+                    return false;
+
+                }
+                sudoku[i][j]=aux;
+            }
+        }
+        return true;
+    }
