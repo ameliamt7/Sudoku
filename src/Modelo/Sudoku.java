@@ -97,3 +97,32 @@ public class Sudoku {
         }
         return true;
     }
+
+    public void mostrarSudoku() {
+        resolverSudoku();
+        for (int i = 0; i < sudoku.length; i++) {
+            for (int j = 0; j < sudoku[0].length; j++) {
+                System.out.print(sudoku[i][j]);
+                if (!(j == sudoku[0].length - 1)) {
+                    System.out.print(" - ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    public void generarSudoku(int nivel) {
+        limpiarSudoku();
+        Random random = new Random();
+
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                int num = random.nextInt(9) + 1;
+                if (validarCuadrante(i, j, num)) {
+                    sudoku[i][j] = num;
+                } else {
+                    j--;
+                }
+            }
+        }
+
