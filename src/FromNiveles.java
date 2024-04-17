@@ -201,3 +201,50 @@ public class FromNiveles extends javax.swing.JFrame {
         xPos = evt.getX();
         yPos = evt.getY();
     }
+
+    private void panelFondoMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelFondoMouseDragged
+        this.setLocation(evt.getXOnScreen() - xPos, evt.getYOnScreen() - yPos);
+    }//GEN-LAST:event_panelFondoMouseDragged
+
+    private void jLabel5MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MousePressed
+        this.setVisible(false);
+    }//GEN-LAST:event_jLabel5MousePressed
+
+    private void jLabel3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseEntered
+        jPanel2.setBackground(new Color(143, 72, 72));
+
+    }//GEN-LAST:event_jLabel3MouseEntered
+
+    private void jLabel3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseExited
+        jPanel2.setBackground(new Color(89,43,25));
+    }//GEN-LAST:event_jLabel3MouseExited
+
+    private void jLabel2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseEntered
+        jPanel3.setBackground(new Color(143, 72, 72));
+    }//GEN-LAST:event_jLabel2MouseEntered
+
+    private void jLabel2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseExited
+        jPanel3.setBackground(new Color(89,43,25));
+    }//GEN-LAST:event_jLabel2MouseExited
+
+    private void jLabel4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseEntered
+        jPanel4.setBackground(new Color(143, 72, 72));
+    }//GEN-LAST:event_jLabel4MouseEntered
+
+    private void jLabel4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseExited
+        jPanel4.setBackground(new Color(89,43,25));
+    }//GEN-LAST:event_jLabel4MouseExited
+
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel panelFondo;
+    // End of variables declaration//GEN-END:variables
+}
