@@ -163,3 +163,41 @@ public class FromNiveles extends javax.swing.JFrame {
                 jLabel5MousePressed(evt);
             }
         });
+
+        panelFondo.add(jLabel5);
+        jLabel5.setBounds(270, 0, 30, 30);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(panelFondo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        layout.setVerticalGroup(
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(panelFondo, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+
+        pack();
+        setLocationRelativeTo(null);
+    }
+
+    private void jLabel3MousePressed(java.awt.event.MouseEvent evt) {
+        tableroSudoku.generarSudoku(1);
+        this.setVisible(false);
+    }
+
+    private void jLabel2MousePressed(java.awt.event.MouseEvent evt) {
+        tableroSudoku.generarSudoku(2);
+        this.setVisible(false);
+    }
+
+    private void jLabel4MousePressed(java.awt.event.MouseEvent evt) {
+        tableroSudoku.generarSudoku(3);
+        this.setVisible(false);
+    }
+
+    private void panelFondoMousePressed(java.awt.event.MouseEvent evt) {
+        xPos = evt.getX();
+        yPos = evt.getY();
+    }
