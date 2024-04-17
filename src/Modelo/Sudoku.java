@@ -126,3 +126,46 @@ public class Sudoku {
             }
         }
 
+        for (int i = 3; i < 6; i++) {
+            for (int j = 3; j < 6; j++) {
+                int num = random.nextInt(9) + 1;
+                if (validarCuadrante(i, j, num)) {
+                    sudoku[i][j] = num;
+                } else {
+                    j--;
+                }
+            }
+        }
+
+        for (int i = 6; i < 9; i++) {
+            for (int j = 6; j < 9; j++) {
+                int num = random.nextInt(9) + 1;
+                if (validarCuadrante(i, j, num)) {
+                    sudoku[i][j] = num;
+                } else {
+                    j--;
+                }
+            }
+        }
+        resolverSudoku();
+
+        for (int i = 0; i < sudoku.length; i++) {
+            for (int j = 0; j < sudoku[0].length; j++) {
+                int aux = j;
+                int rand = random.nextInt(nivel + 1);
+                j += rand;
+                for (int k = aux; k < j && k < sudoku.length; k++) {
+                    sudoku[i][k] = 0;
+                }
+            }
+        }
+
+    }
+
+    public int[][] getSudoku() {
+        return sudoku;
+    }
+
+    public void setSudoku(int[][] sudoku) {
+        this.sudoku = sudoku;
+    }
