@@ -38,11 +38,11 @@ public class Sudoku {
                 int aux = sudoku[i][j];
                 sudoku[i][j] = 0;
                 if (!validarFila(i, aux) || !validarColumna(j, aux) || !validarCuadrante(i, j, aux)) {
-                    sudoku[i][j]=aux;
+                    sudoku[i][j] = aux;
                     return false;
 
                 }
-                sudoku[i][j]=aux;
+                sudoku[i][j] = aux;
             }
         }
         return true;
@@ -169,3 +169,4 @@ public class Sudoku {
     public void setSudoku(int[][] sudoku) {
         this.sudoku = sudoku;
     }
+}
