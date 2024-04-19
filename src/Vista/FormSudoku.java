@@ -60,5 +60,171 @@ public class FormSudoku {
         tableroSudoku.generarSudoku(2);
         estadoCrear = true;
     }
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
 
+        panelFondo = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        panelNuevaPartida = new javax.swing.JPanel();
+        lblNuevaPartida = new javax.swing.JLabel();
+        panelLimpiar = new javax.swing.JPanel();
+        lblLimpiar = new javax.swing.JLabel();
+        panelCrear = new javax.swing.JPanel();
+        lblCrear = new javax.swing.JLabel();
+        panelComprobar = new javax.swing.JPanel();
+        lblComprobar = new javax.swing.JLabel();
+        panelResolver = new javax.swing.JPanel();
+        lblResolver = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        setResizable(false);
+
+        panelFondo.setBackground(new java.awt.Color(203, 102, 102));
+        panelFondo.setPreferredSize(new java.awt.Dimension(540, 420));
+        panelFondo.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                panelFondoMouseDragged(evt);
+            }
+        });
+        panelFondo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                panelFondoMousePressed(evt);
+            }
+        });
+        panelFondo.setLayout(null);
+
+        jLabel1.setFont(new java.awt.Font("Montserrat", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("SUDOKU");
+        panelFondo.add(jLabel1);
+        jLabel1.setBounds(20, 30, 120, 20);
+
+        panelNuevaPartida.setBackground(new java.awt.Color(89, 43, 25));
+
+        lblNuevaPartida.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        lblNuevaPartida.setForeground(new java.awt.Color(255, 255, 255));
+        lblNuevaPartida.setText("    NUEVA PARTIDA");
+        lblNuevaPartida.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblNuevaPartida.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblNuevaPartidaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblNuevaPartidaMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                lblNuevaPartidaMousePressed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panelNuevaPartidaLayout = new javax.swing.GroupLayout(panelNuevaPartida);
+        panelNuevaPartida.setLayout(panelNuevaPartidaLayout);
+        panelNuevaPartidaLayout.setHorizontalGroup(
+                panelNuevaPartidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelNuevaPartidaLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(lblNuevaPartida, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        panelNuevaPartidaLayout.setVerticalGroup(
+                panelNuevaPartidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelNuevaPartidaLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(lblNuevaPartida, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        panelFondo.add(panelNuevaPartida);
+        panelNuevaPartida.setBounds(420, 60, 150, 40);
+
+        panelLimpiar.setBackground(new java.awt.Color(89, 43, 25));
+
+        lblLimpiar.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        lblLimpiar.setForeground(new java.awt.Color(255, 255, 255));
+        lblLimpiar.setText("            LIMPIAR");
+        lblLimpiar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblLimpiar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblLimpiarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblLimpiarMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                lblLimpiarMousePressed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panelLimpiarLayout = new javax.swing.GroupLayout(panelLimpiar);
+        panelLimpiar.setLayout(panelLimpiarLayout);
+        panelLimpiarLayout.setHorizontalGroup(
+                panelLimpiarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelLimpiarLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(lblLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        panelLimpiarLayout.setVerticalGroup(
+                panelLimpiarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelLimpiarLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(lblLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        panelFondo.add(panelLimpiar);
+        panelLimpiar.setBounds(420, 120, 150, 40);
+
+        panelCrear.setBackground(new java.awt.Color(89, 43, 25));
+
+        lblCrear.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        lblCrear.setForeground(new java.awt.Color(255, 255, 255));
+        lblCrear.setText("              CREAR");
+        lblCrear.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblCrear.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblCrearMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblCrearMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                lblCrearMousePressed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panelCrearLayout = new javax.swing.GroupLayout(panelCrear);
+        panelCrear.setLayout(panelCrearLayout);
+        panelCrearLayout.setHorizontalGroup(
+                panelCrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCrearLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(lblCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        panelCrearLayout.setVerticalGroup(
+                panelCrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCrearLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(lblCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        panelFondo.add(panelCrear);
+        panelCrear.setBounds(420, 180, 150, 40);
+
+        panelComprobar.setBackground(new java.awt.Color(89, 43, 25));
+
+        lblComprobar.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        lblComprobar.setForeground(new java.awt.Color(255, 255, 255));
+        lblComprobar.setText("       COMPROBAR");
+        lblComprobar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblComprobar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblComprobarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblComprobarMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                lblComprobarMousePressed(evt);
+            }
+        });
 }
