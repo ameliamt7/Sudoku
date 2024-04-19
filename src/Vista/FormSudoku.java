@@ -305,4 +305,26 @@ public class FormSudoku {
                                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
+        layout.setVerticalGroup(
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(panelFondo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+
+        pack();
+        setLocationRelativeTo(null);
+    }
+
+    private void lblNuevaPartidaMousePressed(java.awt.event.MouseEvent evt) {
+        if (fromNiveles != null) {
+            fromNiveles.setVisible(true);
+        } else {
+            fromNiveles = new FromNiveles(tableroSudoku);
+            fromNiveles.setVisible(true);
+        }
+    }
+
+    private void lblLimpiarMousePressed(java.awt.event.MouseEvent evt) {
+        tableroSudoku.limpiar();
+    }
+
 }
