@@ -227,4 +227,41 @@ public class FormSudoku {
                 lblComprobarMousePressed(evt);
             }
         });
+
+        javax.swing.GroupLayout panelComprobarLayout = new javax.swing.GroupLayout(panelComprobar);
+        panelComprobar.setLayout(panelComprobarLayout);
+        panelComprobarLayout.setHorizontalGroup(
+                panelComprobarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelComprobarLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(lblComprobar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        panelComprobarLayout.setVerticalGroup(
+                panelComprobarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelComprobarLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(lblComprobar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        panelFondo.add(panelComprobar);
+        panelComprobar.setBounds(420, 240, 150, 40);
+
+        panelResolver.setBackground(new java.awt.Color(89, 43, 25));
+
+        lblResolver.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
+        lblResolver.setForeground(new java.awt.Color(255, 255, 255));
+        lblResolver.setText("         RESOLVER");
+        lblResolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblResolver.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblResolverMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblResolverMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                lblResolverMousePressed(evt);
+            }
+        });
+
 }
