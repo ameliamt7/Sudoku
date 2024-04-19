@@ -26,6 +26,8 @@ public class interfaz {
     private Color txtForeground2;
     private Color txtBackground3;
     private Color txtForeground3;
+    private Color txtBackground4;
+    private Color txtForeground4;
     public TableroSudoku(){
 
     }
@@ -42,110 +44,167 @@ public class interfaz {
         txtForeground2 = Color.BLACK;
         txtBackground3 = Color.WHITE;
         txtForeground3 = Color.BLACK;
+        txtBackground4 = Color.RED;
+        txtForeground4 = Color. WHITE
+
+                public TableroSudoku(){
 
     }
+        public void crearSudoku() {
+            this.setLayout(null);
+            this.setSize(txtAncho * 9 + (txtMargen * 4), txtAltura * 9 + (txtMargen * 4));
+            this.setBackground(panelBackground);
+            crearCamposTxt();
+        }
 
-    public JPanel getPanel1() {
-        return panel1;
-    }
+        public void crearCamposTxt() {
+            int x = txtMargen;
+            int y = txtMargen;
 
-    public void setPanel1(JPanel panel1) {
-        this.panel1 = panel1;
-    }
+            for (int i = 0; i < listaTxt.length; i++) {
+                for (int j = 0; j < listaTxt[0].length; j++) {
+                    JTextField txt = new JTextField();
+                    this.add(txt);
+                    txt.setBounds(x, y, txtAncho, txtAltura);
+                    txt.setBackground(txtBackground1);
+                    txt.setForeground(txtForeground1);
+                    txt.setFont(new Font("Montserrat", Font.BOLD, txtTamañoLetra));
+                    txt.setEditable(false);
+                    txt.setCursor(new Cursor(Cursor.HAND_CURSOR));
+                    txt.setBorder(BorderFactory.createLineBorder(panelBackground, 1));
+                    txt.setVisible(true);
+                    x += txtAncho;
+                    if ((j + 1) % 3 == 0) {
+                        x += txtMargen;
+                    }
+                    listaTxt[i][j] = txt;
+                    generarEventos(txt);
+                }
+                x = txtMargen;
+                y += txtAltura;
+                if ((i + 1) % 3 == 0) {
+                    y += txtMargen;
+                }
+            }
 
-    public JTextField[][] getListaTxt() {
-        return listaTxt;
-    }
+        }
 
-    public void setListaTxt(JTextField[][] listaTxt) {
-        this.listaTxt = listaTxt;
-    }
+        public boolean txtGenerado(JTextField txt) {
+            for (JTextField jTxt : listaTxtGenerados) {
+                if (txt == jTxt) {
+                    return true;
+                }
+            }
+            return false;
+        }
 
-    public int getTxtAncho() {
-        return txtAncho;
-    }
+        public void generarEventos(JTextField txt) {
+            MouseListener evento = new MouseListener() {
+                @Override
+                public void mouseClicked(MouseEvent e) {
 
-    public void setTxtAncho(int txtAncho) {
-        this.txtAncho = txtAncho;
-    }
+                }
 
-    public int getTxtAltura() {
-        return txtAltura;
-    }
+                @Override
+                public void mousePressed(MouseEvent e) {
+                    pressed(txt);
+                    txtSelected = txt;
 
-    public void setTxtAltura(int txtAltura) {
-        this.txtAltura = txtAltura;
-    }
+                }
 
-    public int getTxtMargen() {
-        return txtMargen;
-    }
+                @Override
+                public void mouseReleased(MouseEvent e) {
 
-    public void setTxtMargen(int txtMargen) {
-        this.txtMargen = txtMargen;
-    }
+                }
 
-    public int getTxtTamañoLetra() {
-        return txtTamañoLetra;
-    }
+                @Override
+                public void mouseEntered(MouseEvent e) {
 
-    public void setTxtTamañoLetra(int txtTamañoLetra) {
-        this.txtTamañoLetra = txtTamañoLetra;
-    }
+                }
 
-    public Color getPanelBackground() {
-        return panelBackground;
-    }
+                @Override
+                public void mouseExited(MouseEvent e) {
+                }
+            };
+            KeyListener eventoTecla = new KeyListener() {
+                @Override
+                public void keyTyped(KeyEvent e) {
 
-    public void setPanelBackground(Color panelBackground) {
-        this.panelBackground = panelBackground;
-    }
+                }
 
-    public Color getTxtBackground1() {
-        return txtBackground1;
-    }
+                @Override
+                public void keyPressed(KeyEvent e) {
 
-    public void setTxtBackground1(Color txtBackground1) {
-        this.txtBackground1 = txtBackground1;
-    }
+                    if (txtGenerado(txt)) {
+                        return;
+                    } else {
+                        if (e.getKeyChar() == KeyEvent.VK_BACK_SPACE) {
+                            txt.setText("");
+                        }
 
-    public Color getTxtForeground1() {
-        return txtForeground1;
-    }
+                        if (e.getKeyChar() >= 49 && e.getKeyChar() <= 57) {
+                            txt.setText(String.valueOf(e.getKeyChar()));
+                        }
+                    }
 
-    public void setTxtForeground1(Color txtForeground1) {
-        this.txtForeground1 = txtForeground1;
-    }
+                }
 
-    public Color getTxtBackground2() {
-        return txtBackground2;
-    }
+                @Override
+                public void keyReleased(KeyEvent e) {
 
-    public void setTxtBackground2(Color txtBackground2) {
-        this.txtBackground2 = txtBackground2;
-    }
+                }
+            };
 
-    public Color getTxtForeground2() {
-        return txtForeground2;
-    }
+            txt.addMouseListener(evento);
+            txt.addKeyListener(eventoTecla);
+        }
 
-    public void setTxtForeground2(Color txtForeground2) {
-        this.txtForeground2 = txtForeground2;
-    }
+        public void pressed(JTextField txt) {
 
-    public Color getTxtBackground3() {
-        return txtBackground3;
-    }
+            for (JTextField jTxt : listaTxtAux) {
+                jTxt.setBackground(txtBackground1);
+                jTxt.setForeground(txtForeground1);
+                jTxt.setBorder(BorderFactory.createLineBorder(panelBackground, 1));
+            }
+            listaTxtAux.clear();
 
-    public void setTxtBackground3(Color txtBackground3) {
-        this.txtBackground3 = txtBackground3;
-    }
+            for (JTextField jTxt : listaTxtGenerados) {
+                jTxt.setBackground(txtBackground4);
+                jTxt.setForeground(txtForeground4);
+            }
 
-    public Color getTxtForeground3() {
-        return txtForeground3;
-    }
+            for (int i = 0; i < listaTxt.length; i++) {
+                for (int j = 0; j < listaTxt[0].length; j++) {
+                    if (listaTxt[i][j] == txt) {
+                        for (int k = 0; k < listaTxt.length; k++) {
+                            listaTxt[k][j].setBackground(txtBackground2);
+                            //listaTxt[k][j].setForeground(txtForeground2);
+                            listaTxtAux.add(listaTxt[k][j]);
+                        }
+                        for (int k = 0; k < listaTxt[0].length; k++) {
+                            listaTxt[i][k].setBackground(txtBackground2);
+                            //listaTxt[i][k].setForeground(txtForeground2);
+                            listaTxtAux.add(listaTxt[i][k]);
 
-    public void setTxtForeground3(Color txtForeground3) {
-        this.txtForeground3 = txtForeground3;
-    }
+                        }
+                        int posI = sudoku.subCuadranteActual(i);
+                        int posJ = sudoku.subCuadranteActual(j);
+                        for (int k = posI - 3; k < posI; k++) {
+                            for (int l = posJ - 3; l < posJ; l++) {
+                                listaTxt[k][l].setBackground(txtBackground2);
+                                // listaTxt[k][l].setForeground(txtForeground2);
+                                listaTxtAux.add(listaTxt[k][l]);
+                            }
+                        }
+
+                        listaTxt[i][j].setBackground(txtBackground3);
+                        listaTxt[i][j].setForeground(txtForeground3);
+                        listaTxt[i][j].setBorder(BorderFactory.createLineBorder(Color.WHITE, 2));
+                        return;
+                    }
+
+                }
+            }
+
+        }
 }
