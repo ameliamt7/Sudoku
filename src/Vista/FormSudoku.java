@@ -327,4 +327,91 @@ public class FormSudoku {
         tableroSudoku.limpiar();
     }
 
+    private void lblCrearMousePressed(java.awt.event.MouseEvent evt) {
+
+        if (estadoCrear) {
+            lblNuevaPartida.setVisible(false);
+            lblLimpiar.setVisible(false);
+            lblComprobar.setVisible(false);
+            lblResolver.setVisible(false);
+            estadoCrear = false;
+            tableroSudoku.limpiarTxt();
+            lblCrear.setText("              LISTO");
+
+        } else {
+            if (tableroSudoku.crearSudokuPersonalizado()) {
+                lblNuevaPartida.setVisible(true);
+                lblLimpiar.setVisible(true);
+                lblComprobar.setVisible(true);
+                lblResolver.setVisible(true);
+                estadoCrear = true;
+                lblCrear.setText("              CREAR");
+            }
+
+        }
+
+    }
+
+    private void lblComprobarMousePressed(java.awt.event.MouseEvent evt) {
+        tableroSudoku.comprobar();
+    }
+
+    private void panelFondoMousePressed(java.awt.event.MouseEvent evt) {
+
+        xPos = evt.getX();
+        yPos = evt.getY();
+    }
+
+    private void panelFondoMouseDragged(java.awt.event.MouseEvent evt) {
+        this.setLocation(evt.getXOnScreen() - xPos, evt.getYOnScreen() - yPos);
+    }
+
+    private void lblResolverMousePressed(java.awt.event.MouseEvent evt) {
+        tableroSudoku.resolver();
+    }
+
+    private void jLabel2MousePressed(java.awt.event.MouseEvent evt) {
+        System.exit(0);
+    }
+
+    private void lblNuevaPartidaMouseEntered(java.awt.event.MouseEvent evt) {
+        panelNuevaPartida.setBackground(new Color(143, 72, 72));
+    }
+
+    private void lblNuevaPartidaMouseExited(java.awt.event.MouseEvent evt) {
+        panelNuevaPartida.setBackground(new Color(89,43,25));
+    }
+
+    private void lblLimpiarMouseEntered(java.awt.event.MouseEvent evt) {
+        panelLimpiar.setBackground(new Color(143, 72, 72));
+    }
+
+    private void lblLimpiarMouseExited(java.awt.event.MouseEvent evt) {
+        panelLimpiar.setBackground(new Color(89,43,25));
+    }
+
+    private void lblCrearMouseEntered(java.awt.event.MouseEvent evt) {
+        panelCrear.setBackground(new Color(143, 72, 72));
+    }
+
+    private void lblCrearMouseExited(java.awt.event.MouseEvent evt) {
+        panelCrear.setBackground(new Color(89,43,25));
+    }
+
+    private void lblComprobarMouseEntered(java.awt.event.MouseEvent evt) {
+        panelComprobar.setBackground(new Color(143, 72, 72));
+    }
+
+    private void lblComprobarMouseExited(java.awt.event.MouseEvent evt) {
+        panelComprobar.setBackground(new Color(89,43,25));
+    }
+
+    private void lblResolverMouseEntered(java.awt.event.MouseEvent evt) {
+        panelResolver.setBackground(new Color(143, 72, 72));
+    }
+
+    private void lblResolverMouseExited(java.awt.event.MouseEvent evt) {
+        panelResolver.setBackground(new Color(89,43,25));
+    }
+
 }
