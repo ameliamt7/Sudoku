@@ -414,4 +414,18 @@ public class FormSudoku {
         panelResolver.setBackground(new Color(89,43,25));
     }
 
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel lblComprobar;
+    private javax.swing.JLabel lblCrear;
+    private javax.swing.JLabel lblLimpiar;
+    private javax.swing.JLabel lblNuevaPartida;
+    private javax.swing.JLabel lblResolver;
+    private javax.swing.JPanel panelComprobar;
+    private javax.swing.JPanel panelCrear;
+    private javax.swing.JPanel panelFondo;
+    private javax.swing.JPanel panelLimpiar;
+    private javax.swing.JPanel panelNuevaPartida;
+    private javax.swing.JPanel panelResolver;
+
 }
